@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home</title>
+</head>
+<script type="text/javascript">
+	
+</script>
+<style type="text/css">
+	.container{
+		width: 500px;
+		
+	}
+
+	.header{
+		float: left;
+		
+		display: block;
+		
+		width: 500px;
+		border: 1px solid black;
+	}
+	.body{
+		float: left;
+		min-height: 100px;
+		display: block;
+		background-color: gray;
+		width: 500px;
+		border: 1px solid black;
+	}
+
+	.table{
+
+		margin: auto;
+
+	}
+
+	.app table{
+		padding-top:  50px;
+	}
+
+	h2{
+		font-family: 'Arial';
+	}
+</style>
+
+</script>
+<body onload="reinitialize()">
+
+	<div class="container">
+		<div class="header">
+			<h2 style="text-align:center;"id="header-text">Home</h2>
+			<p onclick="nextPage('sampleBlog')">Next</p>
+			<p >Next2</p>
+			<br>
+
+		</div>
+		<div class="app" >
+			<table class="table">
+				<tr>
+					<td>Username: </td>
+					<td><input type="text" onkeydown="user_press(this, event)" onkeyup="pres_key_up(event)"  id="username" onclick="this.select()" name="uname"></td>
+				</tr>
+				<tr>
+					<td>Password: </td>
+					<td><input type="number" id="password"  onclick="this.select()" name="pass"></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" onmousedown="btn_sign_in(1)">Sign In</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="button" onclick="toggleElement()">Toggle Border</button>
+					</td>
+				</tr>
+			</table>
+			<input type="text" id="new-header-text" name="" placeholder="Name of the Header Text" >
+			<button type="button" onclick="changetext('header-text')">Change Home Name to "home"</button>
+		</div>
+	</div>
+	<br>
+	<style type="text/css">
+		.border{
+			border: 5px solid red;
+		}
+	</style>
+	<button onclick="addClass()">Add Class</button>
+
+	<div id="myDiv">
+		<p>My DIV</p>
+	</div>
+
+</body>
+<script type="text/javascript" src="js/myfirstjs.js"></script>
+<script type="text/javascript" src="js/calculator.js"></script>
+<script type="text/javascript">
+	function addClass(){
+		const list = document.getElementById("myDiv").classList;
+		//to add a new class to the element
+		list.add("border");
+	}
+	function user_press(el, event){
+		console.log(event);	
+		if (event.code =="Enter"){
+			btn_sign_in(1);
+		}
+		if ( event.code=='ArrowUp' ){
+			console.log(event);	
+		}
+		
+	}
+
+	function press_key(event){
+		console.log( "keypress: " + event);
+	}
+
+	function pres_key_up(event){
+		console.log( "UP: " + event);
+	}
+
+	function arrowup(){
+
+	}
+
+	function reinitialize(){
+		document.getElementById("username").value = 1;
+	}
+
+
+</script>
+
+</html>
